@@ -11,15 +11,14 @@ stages:
     # Multiple steps run concurrently
     steps:
     - runScriptConfig:
-        image: busybox
-        shellScript: echo ${FIRST_KEY} && echo ${ALIAS_ENV}
-      # Set environment variables in container for the step
+        image: alpine
+        shellScript: apk add --update nodejs && npm install -g vamp-cli-ee
       env:
         FIRST_KEY: VALUE
         SECOND_KEY: VALUE2
       # Set environment variables from project secrets
     - runScriptConfig:
-        image: busybox
+        image: alpine
         shellScript: date -R
       # Conditions for steps
       when:
