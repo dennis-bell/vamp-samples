@@ -18,10 +18,6 @@ stages:
         FIRST_KEY: VALUE
         SECOND_KEY: VALUE2
       # Set environment variables from project secrets
-      envFrom:
-      - sourceName: my-secret
-        sourceKey: secret-key
-        targetKey: ALIAS_ENV
     - runScriptConfig:
         image: busybox
         shellScript: date -R
