@@ -9,4 +9,8 @@ stages:
         npm install -g vamp-cli-ee
         sleep 10
         which vamp
+  - runScriptConfig:
+      image: magneticio/vamp-cli-ee:0.8.0
+      shellScript: |-
         vamp --version
+        
