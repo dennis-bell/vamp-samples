@@ -10,5 +10,5 @@ stages:
         npm install -g vamp-cli-ee
         sleep 10
         which vamp
-        vamp
+        echo -V  |  vamp --version
         
