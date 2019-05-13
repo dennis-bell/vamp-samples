@@ -10,5 +10,8 @@ stages:
         npm install -g vamp-cli-ee
         sleep 10
         which vamp
-        echo -V  |  vamp --version
+        export VAMP_HOST=${VAMP_HOST}
+        export VAMP_TOKEN=${VAMP_TOKEN}
+        export VAMP_NAMESPACE=${VAMP_NAMESPACE}
+        echo -V  |  vamp list deployments
         
